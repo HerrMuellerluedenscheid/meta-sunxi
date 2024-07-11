@@ -7,6 +7,8 @@ inherit kernel
 
 require linux.inc
 
+LINUX_VERSION = "${PV}"
+
 # Since we're not using git, this doesn't make a difference, but we need to fill
 # in something or kernel-yocto.bbclass will fail.
 KBRANCH ?= "master"
@@ -26,6 +28,9 @@ SRC_URI = "https://www.kernel.org/pub/linux/kernel/v5.x/linux-${PV}.tar.xz \
 	file://0001-dts-orange-pi-zero-Add-wifi-support.patch \
 	file://0002-dts-nanopi-neo-air-add-camera.patch \
 	file://0003-dts-allwinner-bananapi-m2-zreo-Enforce-consistent-MM.patch \
+	file://0004-i2c-mv64xxx-Add-atomic_xfer-method-to-driver.patch \
+	file://0005-i2c-mv64xxx-Remove-shutdown-method-from-driver.patch \
+	file://0006-orangepi-pc-plus-Added-mmc-aliases-to-have-consisten.patch \
 	file://defconfig \
 "
 
